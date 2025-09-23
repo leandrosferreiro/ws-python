@@ -1,0 +1,213 @@
+﻿{% extends 'core/base.html' %}
+
+{% block content %}
+           
+                <div class="col-md-6">
+                  <p class="text-justify">O Departamento de Engenharia de Transportes e Geodésia - DETG, foi criado por iniciativa do Prof. Vasco de Azevedo Neto na década de 1960. Está localizado no 6º andar da Escola Politécnica, tendo nas suas instalações o LABGEO - Laboratório de Geomensura Theodoro Sampaio, o CETRAMA – Centro de Estudos de Transporte e Meio Ambiente, voltado à pesquisa, e um acervo de equipamentos utilizados para levantamentos topográficos. Atualmente oferta disciplinas para cursos de Graduação em Engenharia e Tecnologia em Transporte Terrestre.  Este departamento, originalmente denominado de Departamento 04 e depois Departamento de Transportes - DT, desempenhou um papel de suma importância, notadamente, no que tange ao ensino, pesquisa e extensão na área de infraestrutura e planejamento de transportes nesta Universidade.</p>
+                </div>
+                <div class="col-md-4">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#janeiro" aria-controls="home" role="tab" data-toggle="tab">Janeiro</a></li>
+                        <li role="presentation"><a href="#fevereiro" aria-controls="portfolio" role="tab" data-toggle="tab">Fevereiro</a></li>
+                        <li role="presentation"><a href="#marco" aria-controls="artigos" role="tab" data-toggle="tab">Março</a></li>
+                        <li role="presentation"><a href="#abril" aria-controls="contato" role="tab" data-toggle="tab">Abril</a></li>
+                        <li role="presentation"><a href="#maio" aria-controls="home" role="tab" data-toggle="tab">Maio</a></li>
+                        <li role="presentation"><a href="#junho" aria-controls="portfolio" role="tab" data-toggle="tab">Junho</a></li>
+                        <li role="presentation"><a href="#julho" aria-controls="home" role="tab" data-toggle="tab">Julho</a></li>
+                        <li role="presentation"><a href="#agosto" aria-controls="portfolio" role="tab" data-toggle="tab">Agosto</a></li>
+                        <li role="presentation"><a href="#setembro" aria-controls="artigos" role="tab" data-toggle="tab">Setembro</a></li>
+                        <li role="presentation"><a href="#outubro" aria-controls="contato" role="tab" data-toggle="tab">Outubro</a></li>
+                        <li role="presentation"><a href="#novembro" aria-controls="home" role="tab" data-toggle="tab">Novembro</a></li>
+                        <li role="presentation"><a href="#dezembro" aria-controls="portfolio" role="tab" data-toggle="tab">Dezembro</a></li>
+                    </ul>
+
+              <!-- AGENDA SEMESTRAL -->
+              <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active fade in" id="janeiro">
+                {% for evento in janeiro %}
+                  <h2> {{ evento.data }}</h2>
+                  <p> {{ evento.nome }}</p>              
+                                    
+                {% endfor %}
+                </div>
+
+                <div role="tabpanel" class="tab-pane fade" id="fevereiro">
+                {% for evento in fevereiro %}
+                    <h2> {{ evento.data }}</h2>
+                    <p> {{ evento.nome }}</p>              
+                                    
+                {% endfor %}             
+                    
+                     
+                  </div>
+
+                <div role="tabpanel" class="tab-pane fade" id="marco">
+                {% for evento in marco %}
+                  <h2> {{ evento.data }}</h2>
+                  <p> {{ evento.nome }}</p>              
+                                    
+                {% endfor %}      
+                    
+                  </div>
+                  <div role="tabpanel" class="tab-pane  fade" id="abril">
+                     
+                  {% for evento in abril %}
+                    <h2> {{ evento.data }}</h2>
+                    <p> {{ evento.nome }}</p>              
+                                    
+                  {% endfor %}
+                  </div>
+                  <div role="tabpanel" class="tab-pane  fade" id="maio">
+                  {% for evento in maio %}
+                      <h2>{{ evento.data }}</h2>
+                      <p>{{ evento.nome }}</p>              
+                                    
+                  {% endfor %}
+                  </div>
+                  <div role="tabpanel" class="tab-pane  fade" id="junho">                                
+                  {% for evento in junho %}
+                    <h2> {{ evento.data }}</h2>
+                    <p> {{ evento.nome }}</p>              
+                                    
+                  {% endfor %}
+
+                  </div>  
+                <div role="tabpanel" class="tab-pane fade" id="julho">
+                {% for evento in julho %}
+                  <h2> {{ evento.data }}</h2>
+                  <p> {{ evento.nome }}</p>              
+                                    
+                {% endfor %}
+                </div>
+
+                <div role="tabpanel" class="tab-pane fade" id="agosto">
+                {% for evento in agosto %}
+                  <h2> {{ evento.data }}</h2>
+                  <p> {{ evento.nome }}</p>              
+                                    
+                {% endfor %}      
+                    
+                     
+                  </div>
+
+                  <div role="tabpanel" class="tab-pane fade" id="setembro">
+                  {% for evento in setembro %}
+                    <h2> {{ evento.data }}</h2>
+                    <p> {{ evento.nome }}</p>              
+                                    
+                  {% endfor %}   
+                    
+                  </div>
+                  <div role="tabpanel" class="tab-pane  fade" id="outubro">
+                     {% for evento in outubro %}
+                  <h2> {{ evento.data }}</h2>
+                  <p> {{ evento.nome }}</p>              
+                                    
+                {% endfor %}
+                    
+                  </div>
+                  <div role="tabpanel" class="tab-pane  fade" id="novembro">
+                  {% for evento in novembro %}
+                    <h2> {{ evento.data }}</h2>
+                    <p> {{ evento.nome }}</p>              
+                                    
+                  {% endfor %}
+                  </div>
+                  <div role="tabpanel" class="tab-pane  fade" id="dezembro">                                
+                  {% for evento in dezembro %}
+                    <h2> {{ evento.data }}</h2>
+                    <p> {{ evento.nome }}</p>              
+                                    
+                  {% endfor %}
+
+                  </div>  
+                </div> <!-- /.tab-content -->      
+                </div>
+
+                <div class="col-md-10">
+                    <h3>Notícias</h3>
+                </div>
+                {% for post in primeira %}
+                    <div class="col-md-6">
+                        <a href="{% url 'post_detail' slug=post.slug %}"><h5>{{ post.title|linebreaksbr }}</h5></a>
+                        <h6>Puclicado em {{ post.published_date }} por {{ post.author }}</h6> 
+                        <a href="{% url 'post_detail' slug=post.slug %}"><img class="img-responsive" src="{{ MEDIA_URL }}{{ post.imagem.url }}" width="700px" height="400px" alt=""></a>      
+                         <p class="small text-justify">{{ post.text|linebreaksbr }}</p>
+                    </div>
+                {% endfor %} 
+                {% for post in segunda %}  
+                    <div class="col-md-4">
+                        <a href="{% url 'post_detail' slug=post.slug %}"><h5>{{ post.title|linebreaksbr }}</h5></a>
+                        <h6>Puclicado em {{ post.published_date }} por {{ post.author }}</h6>   
+                        <a href="{% url 'post_detail' slug=post.slug %}"><img class="img-responsive" src="{{ MEDIA_URL }}{{ post.imagem.url }}" width="400px" height="300px" alt=""></a>               
+                       <p class="small text-justify">{{ post.text|linebreaksbr }}</p>
+                {% endfor %}
+                        <h5>Categorias</h5>
+                            <ul>
+                                <li>Concurso</li>
+                                <li>Monitoria</li>
+                                <li>Estágio</li>
+                                <li>Viagem</li>
+                     </ul>
+              
+                    </div>
+              
+           
+            <!-- Portfolio Item Heading -->
+
+        <!-- /.row -->      
+
+        <!-- Related Projects Row -->
+        <div class="row outras-noticias">
+
+            <div class="col-md-12">
+                <h4><a href="{% url 'noticias' %}">Outras notícias</a></h4>
+                <a class="right carousel-control carousel-control-noticias" href="#meuCarrossel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Próximo</span>
+              </a>
+                <a class="left carousel-control carousel-control-noticias" href="#meuCarrossel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Anterior</span>
+              </a>
+              
+            </div>
+        </div>
+        	
+            <div class="row carousel-noticias">             
+               
+            <div id="meuCarrossel" class="carousel slide" data-ride="carousel">                 
+            <!-- Container dos slides -->
+            <div class="carousel-inner" role="listbox">
+            <div class="item active">
+            {% for post in painel1 %}
+                <div class="col-sm-3 col-xs-6 thumb">
+                   <a class="thumbnail" href="{% url 'post_detail' slug=post.slug %}">
+                    <p class="small text-center">{{ post.slug }}</p>
+                    <img src="{{ MEDIA_URL }}{{ post.imagem.url }}">
+                </a>              
+                </div>
+            {% endfor %}
+            </div>
+            <div class="item"> 
+            {% for post in painel2 %}
+            <div class="col-sm-3 col-xs-6 thumb">
+               <a class="thumbnail" href="{% url 'post_detail' slug=post.slug %}">
+                    <p class="small text-center">{{ post.slug }}</p>
+                    <img src="{{ MEDIA_URL }}{{ post.imagem.url }}">
+                </a>             
+            </div>
+            {% endfor %}               
+
+        
+              </div>             
+                
+              </div> <!-- /.carousel-inner -->
+              
+            </div> <!-- /#meuCarrossel -->
+              </div>
+
+{% endblock content %}
+            
+
+        
